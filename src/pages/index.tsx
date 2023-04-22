@@ -1,7 +1,5 @@
+import { PageContainer } from '@ant-design/pro-layout';
+
 export default function IndexPage() {
-  return (
-    <div>
-      Home
-    </div>
-  );
+  return <PageContainer>Home</PageContainer>;
 }
