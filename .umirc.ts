@@ -10,9 +10,19 @@ export default defineConfig({
   history: {
     type: 'hash',
   },
-  // routes: [
-  //   { path: '/', component: '@/pages/index' },
-  // ],
+  routes: [
+    { 
+      path: '/', 
+      component: '@/pages/index' 
+    },
+    { 
+      path:'/login',
+      component: '@/pages/Login/Login',
+      layout:false, //不属于layout下的页面，单独出来
+      hiddenInMenuBar:true,
+      hideInMenu:true 
+    },
+  ],
   fastRefresh: {},
   theme: {
     'primary-color': '#5a847f',

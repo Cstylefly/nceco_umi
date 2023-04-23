@@ -1,6 +1,5 @@
 import { history } from 'umi';
 import styles from './app.less';
-import Login from './pages/Login/Login';
 type CurrentUser = {
   type: string;
 };
@@ -21,13 +20,6 @@ export async function layout({initialState,setInitialState}:{initialState:any,se
       {
         path: '/',
         name: 'Home',
-      },
-      {
-        path:'/login',
-        name:'Login',
-        hiddenInMenuBar: true,
-        layout:false,
-        hideInMenu:true
       },
       {
         path: '/about',
