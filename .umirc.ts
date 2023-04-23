@@ -1,5 +1,8 @@
 import { defineConfig } from 'umi';
 
+
+
+
 export default defineConfig({
   nodeModulesTransform: {
     type: 'none',
@@ -18,6 +21,7 @@ export default defineConfig({
   //DOM无法配置在.umirc文件中，所以可以在运行时（app.ts中）配置路由菜单
   layout: {
     // layout: 'mix',
+    // splitMenus:true,  //把第一级的菜单放置到顶栏中，但layout必须为"mix"
     title: 'Nceco',
     locale: true, //是否开启国际化
     siderWidth: 200, //侧边栏的宽度
@@ -25,5 +29,5 @@ export default defineConfig({
   },
   links: [
     { rel: 'icon', href: '/img/logo.jpeg' }, //修改项目浏览器左侧图标  umi的约定：“public 目录，此目录下所有文件会被 copy 到输出路径”  （注：还可以通过修改document.ejs文件里的link标签）
-  ],
+  ]
 });

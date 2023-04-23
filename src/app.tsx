@@ -34,16 +34,6 @@ export async function layout() {
       );
     },
     footerRender: false,
-    // pageTitleRender:(a, defaultPageTitle, c) => {
-    //     console.log(a, defaultPageTitle, c)
-    //     return a.title
-    // }
-    // waterMarkProps:() => {
-    //     return (
-    //       <WaterMark content="Nceco">
-    //         <div style={{ height: 500 }} />
-    //       </WaterMark>
-    //     )
-    // }
+    pageTitleRender:false, //修改浏览器左侧项目名显示样式为title而不是 title-pageName
   };
 }
