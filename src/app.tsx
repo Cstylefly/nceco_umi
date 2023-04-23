@@ -1,5 +1,6 @@
 import { history } from 'umi';
 import styles from './app.less';
+import Login from './pages/Login/Login';
 type CurrentUser = {
   type: string;
 };
@@ -22,6 +23,13 @@ export async function layout({initialState,setInitialState}:{initialState:any,se
         name: 'Home',
       },
       {
+        path:'/login',
+        name:'Login',
+        hiddenInMenuBar: true,
+        layout:false,
+        hideInMenu:true
+      },
+      {
         path: '/about',
         name: 'About',
         children: [
@@ -39,9 +47,9 @@ export async function layout({initialState,setInitialState}:{initialState:any,se
     pageTitleRender:false, //修改浏览器左侧项目名显示样式为title而不是 title-pageName
     //rightContentRender：用于渲染头部右侧的节点，如用户头像，用户中心等。
     onPageChange:(location:{pathname?:string | undefined}) => {
-      // if(!initialState.currentUser?.userId){
-      //   redirectLogin()
-      // }
+      if(!initialState.currentUser?.userId){
+        redirectLogin()
+      }
     }
   };
 }
