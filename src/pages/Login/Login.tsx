@@ -1,6 +1,7 @@
 import React from 'react';
 import { ProForm, ProFormText } from '@ant-design/pro-components'
 import styles from './login.less'
+import { request } from 'umi';
 
 const Login:React.FC = () => {
     return (
@@ -30,7 +31,10 @@ const Login:React.FC = () => {
                             },
                         }}
                         onFinish={async (values) => {
-                            
+                            console.log(Object.entries(values).map(([name,value]) => `${name}=${value}`).join('&'))
+                            // await request('/api/login?name="jack"',{
+                            //     method:'POST'
+                            // })
                         }}
                         isKeyPressSubmit
                     >
