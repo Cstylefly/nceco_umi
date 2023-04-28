@@ -1,6 +1,8 @@
 import React from 'react';
 import { ProForm, ProFormText } from '@ant-design/pro-components'
 import styles from './login.less'
+import { login } from '@/api/login/login'
+import { message } from 'antd';
 
 const Login:React.FC = () => {
     return (
@@ -30,7 +32,10 @@ const Login:React.FC = () => {
                             },
                         }}
                         onFinish={async (values) => {
-                            
+                            const res = await login(values)
+                            if(res.data?.status){
+                                message.success('登录成功')
+                            }
                         }}
                         isKeyPressSubmit
                     >

@@ -1,13 +1,19 @@
 export default{
     'POST /api/login':(req,res) => {
         res.setHeader('Access-Control-Allow-Origin', '*');
-        const {name,password} = req.body
-        if(name === 'jack' && password === '123456'){
+        const {userName,password} = req.body
+        console.log(req.query)
+        if(userName === 'admin' && password === '123456'){
             res.send({
                 status:true,
+                code:200,
+                message:'登录成功',
                 data:{
-                    name:'jack',
-                    type:'admin'
+                    userName:'admin',
+                    type:'admin',
+                    id:'1123598821738675201',
+                    name:'管理员',
+                    avatar:''
                 }
             })
         }else{
