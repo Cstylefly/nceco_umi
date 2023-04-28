@@ -1,7 +1,8 @@
 import React from 'react';
 import { ProForm, ProFormText } from '@ant-design/pro-components'
 import styles from './login.less'
-import { request } from 'umi';
+import { login } from '@/api/login/login'
+import { message } from 'antd';
 
 const Login:React.FC = () => {
     return (
@@ -31,10 +32,10 @@ const Login:React.FC = () => {
                             },
                         }}
                         onFinish={async (values) => {
-                            console.log(Object.entries(values).map(([name,value]) => `${name}=${value}`).join('&'))
-                            // await request('/api/login?name="jack"',{
-                            //     method:'POST'
-                            // })
+                            const res = await login(values)
+                            if(res.data?.status){
+                                message.success('登录成功')
+                            }
                         }}
                         isKeyPressSubmit
                     >

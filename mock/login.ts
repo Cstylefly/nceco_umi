@@ -6,6 +6,8 @@ export default{
         if(userName === 'admin' && password === '123456'){
             res.send({
                 status:true,
+                code:200,
+                message:'登录成功',
                 data:{
                     userName:'admin',
                     type:'admin',

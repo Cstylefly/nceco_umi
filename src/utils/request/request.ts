@@ -3,7 +3,8 @@ import { request } from 'umi'
 export type ResponseType<T = any> = {
     data:T, // data的类型不固定，只在调用的时候确定类型
     code?:string,
-    msg?:string,
+    message?:string,
+    status?:boolean,
     [key:string]:any
 }
 
